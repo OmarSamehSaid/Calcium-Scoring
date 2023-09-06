@@ -27,4 +27,4 @@ jobs:
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/amd64 -t omarsameh/calcium-scoring:latest -t omarsameh/calcium-scoring:$(date +%s) . --push
+          docker buildx build --platform linux/amd64 -t omarsameh/calcium-scoring:v1 . --push
