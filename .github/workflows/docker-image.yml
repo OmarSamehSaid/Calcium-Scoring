@@ -2,29 +2,19 @@ name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main
+   branches: [ master ]
   pull_request:
-    branches:
-      - main
-
+    branches: [ master ]
+      
 jobs:
-
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build and push Docker image
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        run: |
-          docker buildx create --use
-          docker buildx build --platform linux/amd64 -t omarsameh/calcium-scoring:v1 . --push
+    - uses: actions/checkout@v1
+    - name: Build & Push Image
+      run: |
+        echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "omarsameh" --password-stdin
+        docker image build -t omarsameh/calcium-scoring:v1 .
+        docker push omarsameh/calcium-scoring:v1
