@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Flask==2.3.3
 flask==2.3.3
 Flask_Cors==4.0.0
@@ -6,3 +7,13 @@ numpy==1.24.4
 pydicom==2.4.0
 scipy==1.9.1
 tensorflow==2.10.0
+=======
+Flask==2.3.3
+flask==2.3.3
+Flask_Cors==4.0.0
+matplotlib==3.5.2
+numpy==1.24.4
+pydicom==2.4.0
+scipy==1.9.1
+tensorflow==2.10.0
+>>>>>>> e236d54e5f7c72f71815e431cb358b72e5265829
