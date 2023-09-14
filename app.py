@@ -113,7 +113,8 @@ def calculate_agatston_scores():
             agatston_score = compute_agatston_for_slice(ds, binarized_prediction)
 
             if agatston_score > 0:
-                plt.imshow(predictions, cmap='viridis')
+                plt.imshow(image_array, cmap='gray')
+                plt.imshow(predictions, cmap='viridis', alpha=0.6)
                 plt.axis('off')
                 buffer = BytesIO()
                 plt.savefig(buffer, format='png')
