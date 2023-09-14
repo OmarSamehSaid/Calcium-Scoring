@@ -36,7 +36,7 @@ env:
   ECR_REPOSITORY: calcium-score-priv           # set this to your Amazon ECR repository name
   ECS_SERVICE: scoring                       # set this to your Amazon ECS service name
   ECS_CLUSTER: csdemo                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .aws/c-scoring.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: arn:aws:ecs:eu-central-1:399776319495:task-definition/c-scoring:2/task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: c-scoring           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
